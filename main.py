@@ -7,7 +7,7 @@ from discord.ext import commands, tasks
 from datetime import datetime, timedelta, UTC  # FIX
 
 
-DATA_FILE = os.getenv("DATA_FILE", "/app/data/censo_data.json")  # FIX Railway + Volume
+DATA_FILE = "censo_data.json" # FIX Railway + Volume
 from dotenv import load_dotenv  # NUEVO
 load_dotenv()  # NUEVO
 GUILD_ID_TEST = int(os.getenv("GUILD_ID_TEST", "0"))  # FIX Railway
@@ -805,4 +805,5 @@ if __name__ == "__main__":
     token = os.getenv("DISCORD_TOKEN")
     if not token:
         raise RuntimeError("Falta DISCORD_TOKEN en variables de entorno.")
+
     bot.run(token)
